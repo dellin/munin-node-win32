@@ -4,6 +4,25 @@
 ;--------------------------------
 
 !include "MUI2.nsh"
+!define MUI_ABORTWARNING
+
+; Pages
+!define MUI_WELCOMEPAGE_TITLE_3LINES
+!insertmacro MUI_PAGE_WELCOME
+!define MUI_COMPONENTSPAGE_NODESC
+!insertmacro MUI_PAGE_COMPONENTS
+!insertmacro MUI_PAGE_DIRECTORY
+!insertmacro MUI_PAGE_INSTFILES
+!define MUI_FINISHPAGE_TITLE_3LINES
+!insertmacro MUI_PAGE_FINISH
+
+!insertmacro MUI_UNPAGE_CONFIRM
+!insertmacro MUI_UNPAGE_INSTFILES
+!insertmacro MUI_UNPAGE_FINISH
+
+!insertmacro MUI_LANGUAGE "English"
+
+;--------------------------------
 
 !addplugindir "nsisFirewall"
 !include "FileFunc.nsh"
@@ -44,26 +63,6 @@ VIAddVersionKey /LANG=${LANG_ENGLISH} "InternalName" "munin-node-${ARCH}"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "FileVersion" "${VERSION}"
 VIAddVersionKey /LANG=${LANG_ENGLISH} "ProductVersion" "${VERSION}"
   
-;--------------------------------
-
-!define MUI_ABORTWARNING
-
-; Pages
-!define MUI_WELCOMEPAGE_TITLE_3LINES
-!insertmacro MUI_PAGE_WELCOME
-!define MUI_COMPONENTSPAGE_NODESC
-!insertmacro MUI_PAGE_COMPONENTS
-!insertmacro MUI_PAGE_DIRECTORY
-!insertmacro MUI_PAGE_INSTFILES
-!define MUI_FINISHPAGE_TITLE_3LINES
-!insertmacro MUI_PAGE_FINISH
-
-!insertmacro MUI_UNPAGE_CONFIRM
-!insertmacro MUI_UNPAGE_INSTFILES
-!insertmacro MUI_UNPAGE_FINISH
-
-!insertmacro MUI_LANGUAGE "English"
-
 ;--------------------------------
 
 ; The stuff to install
