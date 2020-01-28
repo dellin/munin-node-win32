@@ -2,6 +2,8 @@
 Munin Node for Windows
 ============================
 
+Installer can be found in '/Installer Files/InstallerBuild/'
+
 Introduction
 ------------
 Munin Node for Windows AKA munin-node-win32, is a Windows client for the Munin monitoring system.
@@ -42,6 +44,42 @@ Plugins
   * HD (hdd):
 
     * Reports HardDrive temperature
+
+  * Spin (spinup)
+    
+    * Reports HardDrive spin-up time
+
+  * Online (onlinehours)
+
+    * Reports the total HardDrive Online Hours
+
+  * Readerror (readerrorrate)
+
+    * Reports the HardDrive Read Error Rate
+
+  * Startstop (startstopcyclehdd)
+
+    * Reports the total HardDrive Start Stop Cycles
+
+  * Reallocsector (reallocsectorcount)
+
+    * Reports the HardDrive reallocated sector count
+
+  * Seekerror (seekerrorrate)
+
+    * Reports the HardDrive Seek-Error rate
+
+  * Spinretry (spinretrycount)
+
+    * Reports the HardDrive Spin Retry count
+
+  * Reporteduncorr (reporteduncorrectableerrors)
+
+    * Reports the HardDrive Reported Uncorrectable errors
+
+  * Poweroffretract (poweroffretract)
+
+    * Reports the amount of Unsafe Shutdowns in the HardDrive's lifetime
 
   * Memory (memory):
 
@@ -131,18 +169,21 @@ See ChangeLog
 Building a release
 ------------------
 
-Using MS Visual C++ 2008 Express Edition
+Using Visual Studio 2019 with Build Tool v142.
 
-Bump version in `munin-node.rc` and `installer\munin-node-win32.nsi`
+Open solution file (.sln) with Visual Studio.
 
-Open `munin-node.sln`
+On the top menu, find Build, and the select 'Build Solution'.
 
-Select `Release` and `win32` build options
 
-Then `Build` / `Rebuild solution`
+Creating an Installer
+-----------------------
 
-That creates the `bin\Release\munin-node.exe` file
+Using Inno Setup
 
-Get the `NSIS (Nullsoft Scriptable Install System)` (2.46)
+Open '/Installer Files/Munin-node.iss'
 
-Compile `installer\munin-node-win32.nsi` with NSIS
+Compile the installer
+
+
+
